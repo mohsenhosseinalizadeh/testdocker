@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  testdocker1:
+    image: ${DOCKER_REGISTRY-}testdocker1
+    build:
+      context: .
+      dockerfile: Dockerfile
+  db:
+    image: "hosseinalizadehmohsen/testdockerapp1db:latest"
+    environment:
+      SA_PASSWORD: "abcd@1234"
+      ACCEPT_EULA: "Y"
